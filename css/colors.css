@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+:root {
+    --clr-bg: #0C0A09;              
+    --clr-primary: #FF5100;     
+    --clr-primary-glow: rgba(255, 81, 0, 0.4);
+    --clr-secondary: #FF8A00;   
+    --clr-text: #FAFAF9;       
+    --clr-text-muted: #A8A29E;  
+    --clr-glass: rgba(255, 255, 255, 0.03);
+    --clr-glass-border: rgba(255, 255, 255, 0.08);
+
+    --font-main: 'Outfit', system-ui, -apple-system, sans-serif;
+    
+    --radius-lg: 24px;
+    --radius-md: 12px;
+}
