@@ -6,10 +6,44 @@
     <title>Aura | Refleja tu Esencia</title>
     <meta name="description" content="Aura. Colección de ropa premium.">
     <link rel="stylesheet" href="css/colors.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/design-system.css">
 </head>
 <body>
     <div class="aura-background"></div>
+
+    <button id="ds-toggle" class="ds-badge-btn" title="Ver Design System">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        <span>Design System</span>
+    </button>
+
+    <div id="ds-overlay" class="ds-overlay hidden">
+        <div class="ds-modal">
+            <button id="ds-close" class="ds-close">&times;</button>
+            <h2 class="ds-title">Aura Design System</h2>
+            
+            <div class="ds-section">
+                <h3>Colores Principales</h3>
+                <div class="ds-colors">
+                    <div class="ds-color-item" style="background: var(--clr-primary);">Primary</div>
+                    <div class="ds-color-item" style="background: var(--clr-secondary);">Secondary</div>
+                    <div class="ds-color-item" style="background: var(--clr-bg); border: 1px solid #444;">BG Dark</div>
+                    <div class="ds-color-item" style="background: var(--clr-text); color: black;">Text</div>
+                </div>
+            </div>
+
+            <div class="ds-section">
+                <h3>Tipografía & Botones</h3>
+                <p style="font-size: 1.5rem; font-weight: 800; margin-bottom: 10px;">Outfit Bold 800</p>
+                <p style="font-size: 1rem; color: var(--clr-text-muted); margin-bottom: 20px;">Outfit Light 300</p>
+                <button class="btn btn-primary" style="width: auto;">Botón Primario</button>
+            </div>
+
+            <div class="ds-section">
+                <h3>Inputs & Form</h3>
+                <input type="text" class="form-control" placeholder="Ejemplo de input" style="margin-bottom: 0;">
+            </div>
+        </div>
+    </div>
 
     <header class="header">
         <div class="container header-container">
@@ -18,7 +52,6 @@
         </div>
     </header>
 
-    
     <main>
         <section class="hero">
             <div class="container hero-container">
@@ -34,11 +67,13 @@
                         <div class="form-group">
                             <label for="name">Nombre Completo</label>
                             <input type="text" id="name" name="name" class="form-control" placeholder="Tu nombre">
+                            <span class="error-msg" id="name-error"></span>
                         </div>
                         
                         <div class="form-group">
                             <label for="email">Correo Electrónico</label>
                             <input type="email" id="email" name="email" class="form-control" placeholder="tu@correo.com">
+                            <span class="error-msg" id="email-error"></span>
                         </div>
                         
                         <div class="form-group">
@@ -49,14 +84,17 @@
                                 <option value="accesorios">Accesorios exclusivos</option>
                                 <option value="colaboracion">Colaborar con Aura</option>
                             </select>
+                            <span class="error-msg" id="subject-error"></span>
                         </div>
                         
                         <div class="form-group">
                             <label for="message">Mensaje / Talla</label>
                             <textarea id="message" name="message" class="form-control" rows="3" placeholder="Cuéntanos más..."></textarea>
+                            <span class="error-msg" id="message-error"></span>
                         </div>
                         
                         <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
+                        <div id="form-success" class="success-msg hidden">¡Enviado con éxito!</div>
                     </form>
                 </div>
             </div>
